@@ -1,0 +1,49 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Modern Office Complex",
+      "location": "San Francisco, CA",
+      "client": "XYZ Corporations",
+      "projectImages": [
+        "https://images.unsplash.com/photo-1560185009-5bf9f2849488",
+        "https://images.unsplash.com/photo-1531497865141-8b81d8e73263",
+        "https://images.unsplash.com/photo-1560185123-1fa07f2b0ccf"
+      ],
+      "architect": "John Doe Architects",
+      "visualizer": "Creative Viz Studio",
+      "investor": "ABC Investments",
+      "projectType": "Exterior"
+    },
+    {
+      "id": 2,
+      "name": "Luxury Villa",
+      "location": "Malibu, CA",
+      "client": "John Smith",
+      "projectImages": [
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+        "https://images.unsplash.com/photo-1593696140826-c58b021acf8b",
+        "https://images.unsplash.com/photo-1587300003388-59208cc962cb"
+      ],
+      "architect": "Doe & Clark",
+      "visualizer": "Visuals by Mark",
+      "investor": "Global Realty Partners",
+      "projectType": "Interior"
+    },
+    {
+      "id": 3,
+      "name": "Downtown Skyscraper",
+      "location": "New York, NY",
+      "client": "Cityscape Developers",
+      "projectImages": [
+        "https://images.unsplash.com/photo-1509664158686-1b2a07b8e3e3",
+        "https://images.unsplash.com/photo-1433477155337-9aea4e790195",
+        "https://images.unsplash.com/photo-1475666675596-cca2035b3d79"
+      ],
+      "architect": "Skyline Design",
+      "visualizer": "Sky Visuals",
+      "investor": "HighRise Investments",
+      "projectType": "Exterior"
+    }
+  ]
+}
