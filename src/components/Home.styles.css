@@ -1,0 +1,60 @@
+.hero-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Semi-transparent background for better readability */
+  padding: 20px;
+  border-radius: 10px;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease; /* Smooth transition for visibility */
+}
+
+.hero-text h1 {
+  font-size: 3em;
+  margin: 0;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.hero-text p {
+  font-size: 1.5em;
+  margin: 10px 0 0;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 1s ease-out 0.5s, opacity 1s ease-out 0.5s; /* Delay for smoother animation */
+}
+
+.hero-text.visible {
+  opacity: 1;
+}
+
+.hero-text.visible h1 {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hero-text.visible p {
+  transform: translateY(0);
+  opacity: 1;
+}

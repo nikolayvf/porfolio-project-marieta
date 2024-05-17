@@ -1,0 +1,32 @@
+.article-container {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.article-image {
+  width: 300px; /* Increased width */
+  height: 300px; /* Increased height */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.article-content {
+  flex: 1;
+}
+
+.article-title {
+  font-size: 24px;
+  margin: 0 0 10px 0;
+}
+
+.article-text {
+  font-size: 16px;
+  line-height: 1.5;
+}
