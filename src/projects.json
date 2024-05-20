@@ -6,9 +6,9 @@
       "location": "San Francisco, CA",
       "client": "XYZ Corporations",
       "projectImages": [
-        "https://images.unsplash.com/photo-1560185009-5bf9f2849488",
-        "https://images.unsplash.com/photo-1531497865141-8b81d8e73263",
-        "https://images.unsplash.com/photo-1560185123-1fa07f2b0ccf"
+        "/resources/exterior/1/24011_TECTONIS_ParamontGardens_CAM-02_rev02.jpg",
+        "/resources/exterior/1/24011_TECTONIS_ParamontGardens_CAM-04_rev03.jpg",
+        "/resources/exterior/1/24011_TECTONIS_ParamontGardens_CAM-05_rev02.jpg"
       ],
       "architect": "John Doe Architects",
       "visualizer": "Creative Viz Studio",
@@ -21,9 +21,9 @@
       "location": "Malibu, CA",
       "client": "John Smith",
       "projectImages": [
-        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
-        "https://images.unsplash.com/photo-1593696140826-c58b021acf8b",
-        "https://images.unsplash.com/photo-1587300003388-59208cc962cb"
+        "/resources/interior/1/24011_TECTONIS_ParamontGardens_CAM-02_rev02.jpg",
+        "/resources/interior/1/24011_TECTONIS_ParamontGardens_CAM-04_rev03.jpg",
+        "/resources/interior/1/24011_TECTONIS_ParamontGardens_CAM-05_rev02.jpg"
       ],
       "architect": "Doe & Clark",
       "visualizer": "Visuals by Mark",
@@ -36,9 +36,9 @@
       "location": "New York, NY",
       "client": "Cityscape Developers",
       "projectImages": [
-        "https://images.unsplash.com/photo-1509664158686-1b2a07b8e3e3",
-        "https://images.unsplash.com/photo-1433477155337-9aea4e790195",
-        "https://images.unsplash.com/photo-1475666675596-cca2035b3d79"
+        "/resources/exterior/2/24011_TECTONIS_ParamontGardens_CAM-24_DRONE_rev01.jpg",
+        "/resources/exterior/2/24011_TECTONIS_ParamontGardens_CAM-25_DRONE_rev01.jpg",
+        "/resources/exterior/2/24011_TECTONIS_ParamontGardens_CAM-26_DRONE_rev01.jpg"
       ],
       "architect": "Skyline Design",
       "visualizer": "Sky Visuals",

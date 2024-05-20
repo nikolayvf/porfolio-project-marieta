@@ -6,7 +6,7 @@ function Footer() {
     <footer className="footer">
       <div className="social-media-links">
         <a
-          href="https://www.facebook.com/"
+          href="https://www.facebook.com/DecorEtiDesign/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -17,7 +17,7 @@ function Footer() {
           />
         </a>
         <a
-          href="https://www.instagram.com/"
+          href="https://www.instagram.com/decoreti_design/"
           target="_blank"
           rel="noopener noreferrer"
         >

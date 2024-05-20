@@ -3,6 +3,17 @@ import { useParams } from "react-router-dom";
 import projectsData from "../projects.json";
 import "./ProjectDetail.styles.css";
 
+// Load all images from the resources folder dynamically
+const requireContext = require.context(
+  "../resources",
+  true,
+  /\.(jpg|jpeg|png)$/
+);
+const images = {};
+requireContext.keys().forEach((key) => {
+  images[key.replace("./", "/")] = requireContext(key).default;
+});
+
 function ProjectDetail() {
   const { projectId } = useParams();
   const project = projectsData.projects.find(
@@ -20,7 +31,7 @@ function ProjectDetail() {
         {project.projectImages.map((image, index) => (
           <img
             key={index}
-            src={image}
+            src={images[image]}
             alt={`View ${index + 1} of ${project.name}`}
           />
         ))}
