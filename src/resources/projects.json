@@ -1,0 +1,85 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Modern Office Complex",
+      "location": "San Francisco, CA",
+      "client": "XYZ Corporations",
+      "projectImages": [
+        "resources/exterior/1/24011_TECTONIS_ParamontGardens_CAM-02_rev02.jpg",
+        "resources/exterior/1/24011_TECTONIS_ParamontGardens_CAM-04_rev03.jpg",
+        "resources/exterior/1/24011_TECTONIS_ParamontGardens_CAM-05_rev02.jpg",
+        "resources/exterior/1/24011_TECTONIS_ParamontGardens_CAM-08_rev02.jpg",
+        "resources/exterior/1/24011_TECTONIS_ParamontGardens_CAM-10_rev02.jpg",
+        "resources/exterior/1/24011_TECTONIS_ParamontGardens_CAM-15_rev02.jpg"
+      ],
+      "architect": "John Doe Architects",
+      "visualizer": "Creative Viz Studio",
+      "investor": "ABC Investments",
+      "projectType": "Exterior"
+    },
+    {
+      "id": 2,
+      "name": "Luxury Villa",
+      "location": "Malibu, CA",
+      "client": "John Smith",
+      "projectImages": [
+        "resources/exterior/2/24011_TECTONIS_ParamontGardens_CAM-24_DRONE_rev01.jpg",
+        "resources/exterior/2/24011_TECTONIS_ParamontGardens_CAM-25_DRONE_rev01.jpg",
+        "resources/exterior/2/24011_TECTONIS_ParamontGardens_CAM-26_DRONE_rev01.jpg",
+        "resources/exterior/2/24011_TECTONIS_ParamontGardens_CAM-27_DRONE_rev01.jpg",
+        "resources/exterior/2/24011_TECTONIS_ParamontGardens_CAM-28_DRONE_rev01.jpg"
+      ],
+      "architect": "Doe & Clark",
+      "visualizer": "Visuals by Mark",
+      "investor": "Global Realty Partners",
+      "projectType": "Exterior"
+    },
+    {
+      "id": 3,
+      "name": "Downtown Skyscraper",
+      "location": "New York, NY",
+      "client": "Cityscape Developers",
+      "projectImages": [
+        "resources/interior/1/CGI01.jpg",
+        "resources/interior/1/CGI02.jpg",
+        "resources/interior/1/CGI03.jpg",
+        "resources/interior/1/CGI04.jpg",
+        "resources/interior/1/CGI05.jpg",
+        "resources/interior/1/CGI06.jpg",
+        "resources/interior/1/CGI07.jpg",
+        "resources/interior/1/CGI08.jpg",
+        "resources/interior/1/CGI09.jpg",
+        "resources/interior/1/CGI10_opt_shaf.jpg",
+        "resources/interior/1/CGI10.jpg"
+      ],
+      "architect": "Skyline Design",
+      "visualizer": "Sky Visuals",
+      "investor": "HighRise Investments",
+      "projectType": "Interior"
+    },
+    {
+      "id": 4,
+      "name": "Residential Complex",
+      "location": "Los Angeles, CA",
+      "client": "Residential Developers",
+      "projectImages": [
+        "resources/interior/2/CGI11.jpg",
+        "resources/interior/2/CGI12.jpg",
+        "resources/interior/2/CGI13.jpg",
+        "resources/interior/2/CGI14.jpg",
+        "resources/interior/2/CGI15.jpg",
+        "resources/interior/2/CGI16.jpg",
+        "resources/interior/2/CGI17.jpg",
+        "resources/interior/2/CGI18.jpg",
+        "resources/interior/2/CGI19.jpg",
+        "resources/interior/2/CGI20.jpg",
+        "resources/interior/2/CGI21.jpg"
+      ],
+      "architect": "Residential Architects",
+      "visualizer": "Home Visuals",
+      "investor": "Housing Investments",
+      "projectType": "Interior"
+    }
+  ]
+}

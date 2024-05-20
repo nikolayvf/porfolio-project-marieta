@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import projectsData from "../projects.json";
+import projectsData from "../resources/projects.json";
 import "./ProjectDetail.styles.css";
 
-// Load all images from the resources folder dynamically
-const requireContext = require.context(
-  "../resources",
-  true,
-  /\.(jpg|jpeg|png)$/
+// Function to dynamically import images
+const importImages = (r) => {
+  let images = {};
+  r.keys().forEach((item, index) => {
+    images[item.replace("./", "")] = r(item);
+  });
+  return images;
+};
+
+const images = importImages(
+  require.context("../resources", true, /\.(jpg|jpeg|png)$/)
 );
-const images = {};
-requireContext.keys().forEach((key) => {
-  images[key.replace("./", "/")] = requireContext(key).default;
-});
 
 function ProjectDetail() {
   const { projectId } = useParams();
@@ -20,40 +22,91 @@ function ProjectDetail() {
     (p) => p.id === parseInt(projectId, 10)
   );
 
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   if (!project) {
     return <div>Project not found</div>;
   }
 
+  const handlePrevImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? project.projectImages.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === project.projectImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const currentImageKey = project.projectImages[currentImageIndex]
+    .split("/")
+    .slice(1)
+    .join("/");
+  const currentImageSrc = images[currentImageKey];
+
   return (
     <div className="project-detail">
       <h1>{project.name}</h1>
-      <div className="project-images">
-        {project.projectImages.map((image, index) => (
+      <div className="carousel">
+        <div className="carousel-main">
+          <button
+            onClick={handlePrevImage}
+            className="carousel-arrow left-arrow"
+          >
+            ◀
+          </button>
           <img
-            key={index}
-            src={images[image]}
-            alt={`View ${index + 1} of ${project.name}`}
+            src={currentImageSrc}
+            alt={`View of ${project.name}`}
+            className="main-image"
           />
-        ))}
+          <button
+            onClick={handleNextImage}
+            className="carousel-arrow right-arrow"
+          >
+            ▶
+          </button>
+        </div>
+        <div className="carousel-thumbnails">
+          {project.projectImages.map((imagePath, index) => {
+            const imageKey = imagePath.split("/").slice(1).join("/");
+            const imageSrc = images[imageKey];
+            return (
+              <img
+                key={index}
+                src={imageSrc}
+                alt={`Thumbnail ${index + 1} of ${project.name}`}
+                className={`thumbnail ${
+                  index === currentImageIndex ? "active" : ""
+                }`}
+                onClick={() => setCurrentImageIndex(index)}
+              />
+            );
+          })}
+        </div>
       </div>
-      <p>
-        <strong>Location:</strong> {project.location}
-      </p>
-      <p>
-        <strong>Client:</strong> {project.client}
-      </p>
-      <p>
-        <strong>Architect:</strong> {project.architect}
-      </p>
-      <p>
-        <strong>Visualizer:</strong> {project.visualizer}
-      </p>
-      <p>
-        <strong>Investor:</strong> {project.investor}
-      </p>
-      <p>
-        <strong>Type:</strong> {project.projectType}
-      </p>
+      <div className="project-info">
+        <p>
+          <strong>Location:</strong> {project.location}
+        </p>
+        <p>
+          <strong>Client:</strong> {project.client}
+        </p>
+        <p>
+          <strong>Architect:</strong> {project.architect}
+        </p>
+        <p>
+          <strong>Visualizer:</strong> {project.visualizer}
+        </p>
+        <p>
+          <strong>Investor:</strong> {project.investor}
+        </p>
+        <p>
+          <strong>Type:</strong> {project.projectType}
+        </p>
+      </div>
     </div>
   );
 }
