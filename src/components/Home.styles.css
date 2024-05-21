@@ -8,6 +8,16 @@
 .hero-image {
   width: 100%;
   height: auto;
+  animation: zoomIn 10s ease-in forwards; /* Faster zoom in without zoom out */
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
 
 .hero-text {
@@ -26,35 +36,11 @@
   padding: 20px;
   border-radius: 10px;
   opacity: 0; /* Initially hidden */
-  transition: opacity 0.5s ease; /* Smooth transition for visibility */
-}
-
-.hero-text h1 {
-  font-size: 3em;
-  margin: 0;
-  transform: translateY(-100%);
-  opacity: 0;
-  transition: transform 1s ease-out, opacity 1s ease-out;
-}
-
-.hero-text p {
-  font-size: 1.5em;
-  margin: 10px 0 0;
-  transform: translateY(100%);
-  opacity: 0;
-  transition: transform 1s ease-out 0.5s, opacity 1s ease-out 0.5s; /* Delay for smoother animation */
+  visibility: hidden; /* Initially hidden */
+  transition: opacity 2s ease-in-out; /* Smooth transition for visibility */
 }
 
 .hero-text.visible {
   opacity: 1;
-}
-
-.hero-text.visible h1 {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.hero-text.visible p {
-  transform: translateY(0);
-  opacity: 1;
+  visibility: visible; /* Make visible */
 }

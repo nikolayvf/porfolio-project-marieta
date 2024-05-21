@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import projectsData from "../resources/projects.json";
 import "./ProjectDetail.styles.css";
@@ -23,6 +23,22 @@ function ProjectDetail() {
   );
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "ArrowLeft") {
+        handlePrevImage();
+      } else if (event.key === "ArrowRight") {
+        handleNextImage();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentImageIndex, project.projectImages.length]);
 
   if (!project) {
     return <div>Project not found</div>;

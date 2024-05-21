@@ -39,27 +39,12 @@ function Projects() {
           >
             <div className="project-image">
               <img src={imageSrc} alt={project.name} />
-            </div>
-            <div className="project-info">
-              <h2>{project.name}</h2>
-              <p>
-                <strong>Location:</strong> {project.location}
-              </p>
-              <p>
-                <strong>Client:</strong> {project.client}
-              </p>
-              <p>
-                <strong>Architect:</strong> {project.architect}
-              </p>
-              <p>
-                <strong>Visualizer:</strong> {project.visualizer}
-              </p>
-              <p>
-                <strong>Investor:</strong> {project.investor}
-              </p>
-              <p>
-                <strong>Type:</strong> {project.projectType}
-              </p>
+              <div className="overlay">
+                <div className="overlay-text">
+                  <h2>{project.name}</h2>
+                  <p>{project.location}</p>
+                </div>
+              </div>
             </div>
           </div>
         );
