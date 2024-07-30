@@ -3,7 +3,7 @@
   grid-template-columns: repeat(
     auto-fill,
     minmax(500px, 1fr)
-  ); /* Two images per row */
+  ); /* Adjusted minmax for responsiveness */
   gap: 20px;
   padding: 20px;
 }
@@ -13,6 +13,11 @@
   overflow: hidden;
   border-radius: 8px;
   transition: transform 0.2s;
+  height: 500px; /* Fixed height for uniformity */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9; /* Optional: Background color to handle image transparency */
 }
 
 .project-card:hover {
@@ -21,12 +26,14 @@
 
 .project-image {
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .project-image img {
-  width: 100%; /* Make image take full width of the container */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container without distortion */
   display: block;
 }
 

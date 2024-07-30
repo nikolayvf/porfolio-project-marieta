@@ -5,26 +5,40 @@ function About() {
   return (
     <div className="about-container">
       <h1>About Us</h1>
-      <p className="intro-text">Find out more about our team and mission.</p>
+      <p className="intro-text">
+        DECORET DESIGN HABITAT стартира през 2024 г. Студиото се занимава с
+        архитектурни визуализации и интериорен дизайн. Основната ни задача е
+        визуализацията да улесни комуникацията между инвеститори, архитекти,
+        дизайнери и клиенти.
+      </p>
       <div className="profile">
-        <h2>John Doe</h2>
+        <h2>Нашата мисия</h2>
         <p className="profile-text">
-          John Doe is a highly skilled 3D Designer with over a decade of
-          experience in creating stunning 3D architecture models. His expertise
-          spans across residential, commercial, and industrial projects,
-          bringing each vision to life with exceptional detail and accuracy.
+          Ако сте строителен инвеститор, който търси маркетингови визуализации,
+          които да публикува в сайта си, в рекламни брошури и билборди...
         </p>
         <p className="profile-text">
-          John has a keen eye for design and a passion for transforming
-          blueprints into realistic 3D models. His work not only enhances the
-          visualization process for clients but also aids architects and
-          builders in understanding complex designs.
+          Ако сте архитект или интериорен дизайнер, който иска да представи
+          проекта си по най-добрият начин на своите клиенти...
         </p>
         <p className="profile-text">
-          Throughout his career, John has worked with a variety of clients, from
-          individual homeowners to large corporations, delivering high-quality
-          models that exceed expectations. His dedication to his craft and
-          innovative approach make him a valuable asset to any project.
+          Ако сте решили, че е време за промяна в интериорния дизайн на вашият
+          дом, работно място ....
+        </p>
+        <p className="profile-text">
+          DECORET DESIGN HABITAT е точното място за вас. Ще се радваме да се
+          свържете с нас на мейл{" "}
+          <a href="mailto:info@decoret.eu">info@decoret.eu</a> или на телефон{" "}
+          <a href="tel:+359885545911">+359 885 545 911</a>, за да обсъдим вашите
+          идеи и да ги превърнем в 3D реалност.
+        </p>
+      </div>
+      <div className="additional-section">
+        <h2>Нашите Услуги</h2>
+        <p className="profile-text">
+          Предлагаме широк спектър от услуги, включително 3D моделиране,
+          анимации, виртуални разходки и много други, за да ви помогнем да
+          визуализирате и реализирате вашите проекти по най-ефективния начин.
         </p>
       </div>
     </div>
@@ -32,3 +46,44 @@ function About() {
 }
 
 export default About;
+
+// import React from "react";
+// import "./About.styles.css";
+
+// function About() {
+//   return (
+//     <div className="about-container">
+//       <h1>About Us</h1>
+//       <p className="intro-text">
+//         DECORET DESIGN HABITAT стартира през 2024 г. Студиото се занимава с
+//         архитектурни визуализации и интериорен дизайн. Основната ни задача е
+//         визуализацията да улесни комуникацията между инвеститори, архитекти,
+//         дизайнери и клиенти.
+//       </p>
+//       <div className="profile">
+//         <h2>Нашата мисия</h2>
+//         <p className="profile-text">
+//           Ако сте строителен инвеститор, който търси маркетингови визуализации,
+//           които да публикува в сайта си, в рекламни брошури и билборди...
+//         </p>
+//         <p className="profile-text">
+//           Ако сте архитект или интериорен дизайнер, който иска да представи
+//           проекта си по най-добрият начин на своите клиенти...
+//         </p>
+//         <p className="profile-text">
+//           Ако сте решили, че е време за промяна в интериорния дизайн на вашият
+//           дом, работно място ....
+//         </p>
+//         <p className="profile-text">
+//           DECORET DESIGN HABITAT е точното място за вас. Ще се радваме да се
+//           свържете с нас на мейл{" "}
+//           <a href="mailto:info@decoret.eu">info@decoret.eu</a> или на телефон{" "}
+//           <a href="tel:+359885545911">+359 885 545 911</a>, за да обсъдим вашите
+//           идеи и да ги превърнем в 3D реалност.
+//         </p>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default About;

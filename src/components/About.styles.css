@@ -44,3 +44,36 @@
   margin-bottom: 20px;
   font-family: "Helvetica Neue", Arial, sans-serif; /* Match font style */
 }
+
+.profile-text a {
+  color: #007bff; /* or any color that fits your design */
+  text-decoration: none;
+}
+
+.profile-text a:hover {
+  text-decoration: underline;
+}
+
+/* Existing styles ... */
+
+.additional-section {
+  background-color: #f1f1f1;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.additional-section h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.additional-section .profile-text {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}

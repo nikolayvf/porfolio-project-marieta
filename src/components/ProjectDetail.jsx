@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import projectsData from "../resources/projects.json";
 import "./ProjectDetail.styles.css";
@@ -6,7 +6,7 @@ import "./ProjectDetail.styles.css";
 // Function to dynamically import images
 const importImages = (r) => {
   let images = {};
-  r.keys().forEach((item, index) => {
+  r.keys().forEach((item) => {
     images[item.replace("./", "")] = r(item);
   });
   return images;
@@ -24,6 +24,19 @@ function ProjectDetail() {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Memoize the functions using useCallback
+  const handlePrevImage = useCallback(() => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? project.projectImages.length - 1 : prevIndex - 1
+    );
+  }, [project.projectImages.length]);
+
+  const handleNextImage = useCallback(() => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === project.projectImages.length - 1 ? 0 : prevIndex + 1
+    );
+  }, [project.projectImages.length]);
+
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "ArrowLeft") {
@@ -37,29 +50,13 @@ function ProjectDetail() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentImageIndex, project.projectImages.length]);
+  }, [handlePrevImage, handleNextImage]);
 
   if (!project) {
     return <div>Project not found</div>;
   }
 
-  const handlePrevImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? project.projectImages.length - 1 : prevIndex - 1
-    );
-  };
-
-  const handleNextImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === project.projectImages.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const currentImageKey = project.projectImages[currentImageIndex]
-    .split("/")
-    .slice(1)
-    .join("/");
+  const currentImageKey = project.projectImages[currentImageIndex];
   const currentImageSrc = images[currentImageKey];
 
   return (
@@ -70,25 +67,28 @@ function ProjectDetail() {
           <button
             onClick={handlePrevImage}
             className="carousel-arrow left-arrow"
+            aria-label="Previous Image"
           >
             ◀
           </button>
-          <img
-            src={currentImageSrc}
-            alt={`View of ${project.name}`}
-            className="main-image"
-          />
+          <div className="image-container">
+            <img
+              src={currentImageSrc}
+              alt={`View of ${project.name}`}
+              className="main-image"
+            />
+          </div>
           <button
             onClick={handleNextImage}
             className="carousel-arrow right-arrow"
+            aria-label="Next Image"
           >
             ▶
           </button>
         </div>
         <div className="carousel-thumbnails">
           {project.projectImages.map((imagePath, index) => {
-            const imageKey = imagePath.split("/").slice(1).join("/");
-            const imageSrc = images[imageKey];
+            const imageSrc = images[imagePath];
             return (
               <img
                 key={index}
@@ -107,21 +107,32 @@ function ProjectDetail() {
         <p>
           <strong>Location:</strong> {project.location}
         </p>
-        <p>
-          <strong>Client:</strong> {project.client}
-        </p>
-        <p>
-          <strong>Architect:</strong> {project.architect}
-        </p>
-        <p>
-          <strong>Visualizer:</strong> {project.visualizer}
-        </p>
-        <p>
-          <strong>Investor:</strong> {project.investor}
-        </p>
+        {project.client && (
+          <p>
+            <strong>Client:</strong> {project.client}
+          </p>
+        )}
+        {project.architect && (
+          <p>
+            <strong>Architect:</strong> {project.architect}
+          </p>
+        )}
+        {project.visualizer && (
+          <p>
+            <strong>Visualizer:</strong> {project.visualizer}
+          </p>
+        )}
+        {project.investor && (
+          <p>
+            <strong>Investor:</strong> {project.investor}
+          </p>
+        )}
         <p>
           <strong>Type:</strong> {project.projectType}
         </p>
+        <div className="project-description">
+          <p>{project.projectInfo}</p>
+        </div>
       </div>
     </div>
   );
