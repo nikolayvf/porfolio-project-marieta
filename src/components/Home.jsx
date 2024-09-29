@@ -1,13 +1,6 @@
 import React, { useEffect } from "react";
-import img01 from "../resources/01_position.png";
-import img02 from "../resources/02_position.png";
-import img03 from "../resources/03_position.png";
-import img04 from "../resources/04_position.png";
-import img05 from "../resources/05_position.png";
-import img06 from "../resources/06_position.png";
-import img07 from "../resources/07_position_final.png";
-import logo from "../resources/DECORET_LOGO.png";
-import "./Home.styles.css";
+import heroImage from "../resources/hero-image.jpg";
+import "./Home.styles.css"; // Import the CSS file
 
 function Home() {
   useEffect(() => {
